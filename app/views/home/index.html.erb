@@ -1,1 +1,27 @@
-<h1>Index</h1>
+<main>
+  <form class="game-option-form" method="post" action="/game">
+    <fieldset>
+      <legend>Board Size</legend>
+
+      <% @board_sizes.each_with_index do |(key, description), index| %>
+        <label class="game-option">
+          <input type="radio" name="board_size" value="<%= key.to_s %>"<%= index == 0 ? " checked" : "" %>/>
+          <%= description %>
+        </label>
+      <% end %>
+    </fieldset>
+
+    <fieldset>
+      <legend>Game Mode</legend>
+
+      <% @game_modes.each_with_index do |(key, description), index| %>
+        <label class="game-option">
+          <input type="radio" name="game_mode" value="<%= key.to_s %>"<%= index == 0 ? " checked" : ""%>/>
+          <%= description %>
+        </label>
+      <% end %>
+    </fieldset>
+
+    <p><button type="submit" name="ui_type" value="ajax" class="play-game">Play</button></p>
+  </form>
+</main>
