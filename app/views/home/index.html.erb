@@ -1,5 +1,5 @@
 <main>
-  <form class="game-option-form" method="post" action="/game">
+  <%= form_tag "/game/new", :method => "post", :class => "game-option-form" do %>
     <fieldset>
       <legend>Board Size</legend>
 
@@ -22,6 +22,6 @@
       <% end %>
     </fieldset>
 
-    <p><button type="submit" name="ui_type" value="ajax" class="play-game">Play</button></p>
-  </form>
+    <p><button type="submit" class="play-game">Play</button></p>
+  <% end %>
 </main>

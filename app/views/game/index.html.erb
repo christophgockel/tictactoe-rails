@@ -1,0 +1,29 @@
+<main>
+  <table class="game">
+  </table>
+
+  <div class="grid-container">
+    <div class="full-width">
+      <p class="status"><%= @status %></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="grid-container">
+    <div class="half-width"><a class="button" href="/">Back</a></div>
+    <div class="half-width"><a class="button" href="javascript:void(0);" onclick="startNewGame();">Restart Game</a></div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  var startNewGame = function() {
+    var api = new API();
+    var tictactoe = new TicTacToe(api, $("table.game"), $("p.status"));
+
+    tictactoe.createNewGame("<%= session[:board_size].to_s %>", "<%= session[:game_mode].to_s %>");
+    tictactoe.play();
+  }
+
+  startNewGame();
+</script>
