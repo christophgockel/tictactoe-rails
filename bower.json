@@ -1,0 +1,8 @@
+{
+  "vendor": {
+    "name": "bower-rails generated vendor assets",
+    "dependencies": {
+      "tictactoe.js": "https://raw.githubusercontent.com/christophgockel/tictactoe-js/master/dist/tictactoe.js"
+    }
+  }
+}

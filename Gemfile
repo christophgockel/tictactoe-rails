@@ -47,4 +47,5 @@ group :test do
   gem 'rspec-rails'
 end
 
+gem 'bower-rails'
 gem 'tictactoe', git: "git@github.com:christophgockel/tictactoe-gem.git"

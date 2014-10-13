@@ -18,7 +18,10 @@
 
 <script type="text/javascript">
   var startNewGame = function() {
-    var api = new API();
+    var api = new API({
+      "new": "/api/new",
+      "play": "/api/play"
+    });
     var tictactoe = new TicTacToe(api, $("table.game"), $("p.status"));
 
     tictactoe.createNewGame("<%= session[:board_size].to_s %>", "<%= session[:game_mode].to_s %>");
