@@ -1,5 +1,6 @@
-require 'tictactoe/player_factory'
 require 'tictactoe/game'
+require 'tictactoe/board'
+require 'tictactoe/player_factory'
 
 module TicTacToeRails
   class GameAdapter
