@@ -11,10 +11,17 @@ class ApiController < ApplicationController
 
     session[:game] = adapter.create_game(board_size, game_mode, @display)
 
-    render json: json_response
+    render json: json_game_state
   end
 
-  def json_response
+  def play
+    @display.move = params["move"].to_i
+    session[:game].play_next_round
+
+    render json: json_game_state
+  end
+
+  def json_game_state
     game = session[:game]
 
     {
